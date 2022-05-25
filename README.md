@@ -2,8 +2,7 @@
 Automatizacion en screenplay de la web Advantagedemo para proceso de selección en SQA
 
 ## Antes de Ejecutar
-- Es necesario tener en cuenta que este proyecto fue ejecutado con con
-  chromedriver para mac.
+- Es necesario tener en cuenta que este proyecto fue ejecutado chromedriver para mac.
 
     - Si su sistema operativo es diferente debe modificar en el archivo serenity.properties
 
@@ -19,8 +18,8 @@ Automatizacion en screenplay de la web Advantagedemo para proceso de selección 
 -  Para descargar el codigo fuente del proyecto es necesario ejecutar el
    comando:
 
-   > git clone https://github.com/pattyvillaj/automatizacionUtest.git
-
+   > git clone https://github.com/pattyvillaj/advantage-screenplay.git
+  
 
 ## Resultado Ejecución Automatización
 
