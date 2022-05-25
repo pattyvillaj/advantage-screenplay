@@ -1,5 +1,5 @@
 # advantage-screenplay
-Automatizacion en screenplay de la web Advantagedemo para para proceso de selección en SQA
+Automatizacion en screenplay de la web Advantagedemo para proceso de selección en SQA
 
 ## Antes de Ejecutar
 - Es necesario tener en cuenta que este proyecto fue ejecutado con con
