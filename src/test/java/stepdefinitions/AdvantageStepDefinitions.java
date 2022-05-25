@@ -7,6 +7,7 @@ import cucumber.api.java.en.When;
 import model.AdvantageData;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
+import questions.Answer;
 import tasks.OpenUp;
 import tasks.CreateAccount;
 import tasks.RegistrationDataBasic;
@@ -30,13 +31,17 @@ public class AdvantageStepDefinitions {
 
     @When("^she enters her data in the registration form$")
     public void sheEntersHerDataInTheRegistrationForm(List<AdvantageData> advantageData) {
-        OnStage.theActorInTheSpotlight().attemptsTo(RegistrationDataBasic.the(advantageData.get(0).getUserName(),advantageData.get(0).getPassword()));
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                RegistrationDataBasic.the(advantageData.get(0).getUserName(),advantageData.get(0).getEmail(),advantageData.get(0).getPassword(),advantageData.get(0).getPassword(),
+                advantageData.get(0).getFirstName(),advantageData.get(0).getLastName(),advantageData.get(0).getPhoneNumber(), advantageData.get(0).getCountry(), advantageData.get(0).getCity(),advantageData.get(0).getAddress(),
+                        advantageData.get(0).getStateProvinceRegion(),advantageData.get(0).getpostalCode()
+        ));
 
     }
 
     @Then("^she will check that your registration was successful$")
-    public void sheWillCheckThatYourRegistrationWasSuccessful() {
-
+    public void sheWillCheckThatYourRegistrationWasSuccessful(List<AdvantageData> advantageData) {
+        theActorInTheSpotlight().should(seeThat(Answer.toThe(advantageData.get(0).getUserName())));
     }
 
 }

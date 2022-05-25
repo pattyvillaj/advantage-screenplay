@@ -11,6 +11,8 @@ import java.time.Duration;
 
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
+import static userinterface.AdvantageHomePage.CREATE_ACCOUNT_BUTTON;
+import static userinterface.AdvantageHomePage.USER_BUTTON;
 
 public class CreateAccount implements Task {
     private AdvantageHomePage advantageHomePage;
@@ -21,15 +23,14 @@ public class CreateAccount implements Task {
 
     @Override
     public <T extends Actor > void performAs(T actor) {
+
         actor.attemptsTo(
-                Click.on(AdvantageHomePage.USER_BUTTON)
+                WaitUntil.the(USER_BUTTON, isVisible()).forNoMoreThan(30).seconds(),
+                Click.on(USER_BUTTON.waitingForNoMoreThan(Duration.ofSeconds(30)))
         );
         actor.attemptsTo(
-                WaitUntil.the(AdvantageHomePage.CREATE_ACCOUNT_BUTTON
-                        .waitingForNoMoreThan(Duration.ofSeconds(20)), isEnabled())
-        );
-        actor.attemptsTo(
-                Click.on(AdvantageHomePage.CREATE_ACCOUNT_BUTTON.waitingForNoMoreThan(Duration.ofSeconds(20)))
+                WaitUntil.the(CREATE_ACCOUNT_BUTTON, isVisible()).forNoMoreThan(30).seconds(),
+                Click.on(CREATE_ACCOUNT_BUTTON.waitingForNoMoreThan(Duration.ofSeconds(15)))
         );
     }
 
